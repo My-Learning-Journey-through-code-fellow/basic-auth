@@ -1,9 +1,9 @@
 'use strict';
 
-const UserModel = (seq, DataTypes) => {
-  let users = seq.define('User', {
+const userSchema = (seq, DataTypes) => {
+  let users = seq.define('Users', {
     username: {
-      type:DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     password: {
@@ -14,4 +14,4 @@ const UserModel = (seq, DataTypes) => {
   return users;
 };
 
-module.exports = UserModel;
+module.exports = userSchema;

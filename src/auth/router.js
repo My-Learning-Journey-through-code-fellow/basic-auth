@@ -1,5 +1,6 @@
 'use strict';
 
+const bcrypt = require('bcrypt');
 const middleware = require('../src/basic');
 const express = require('express');
 const router = express.Router();

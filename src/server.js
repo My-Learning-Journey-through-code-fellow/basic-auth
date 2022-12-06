@@ -5,6 +5,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const base64 = require('base-64');
 const { Sequelize, DataTypes } = require('sequelize');
+const { Users } = require('./')
 
 // NOTE: connected to sqlite::memory out of box for proof of life
 // TODO: 
