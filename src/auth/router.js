@@ -4,14 +4,14 @@ const bcrypt = require('bcrypt');
 const middleware = require('../src/basic');
 const express = require('express');
 const router = express.Router();
-const { Users } = require('./models/index');
+const { user } = require('./models/user-models');
 
 router.post('/signup', async (req, res) => {
 
   try {
-    console.log(Users);
+    console.log(user);
     req.body.password = await bcrypt.hash(req.body.password, 5);
-    const record = await Users.create(req.body);
+    const record = await user.create(req.body);
     res.status(200).json(record);
   } catch (e) { res.status(403).send('Error Creating User'); }
 });
