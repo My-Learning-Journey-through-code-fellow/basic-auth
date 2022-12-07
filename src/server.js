@@ -5,7 +5,6 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const base64 = require('base-64');
 const { Sequelize, DataTypes } = require('sequelize');
-const { Users } = require('./')
 
 // NOTE: connected to sqlite::memory out of box for proof of life
 // TODO: 
@@ -26,7 +25,7 @@ const sequelize = new Sequelize(DATABASE_URL);
 app.use(express.urlencoded({ extended: true }));
 
 // Create a Sequelize model
-const Users = sequelize.define('User', {
+const user = sequelize.define('User', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
